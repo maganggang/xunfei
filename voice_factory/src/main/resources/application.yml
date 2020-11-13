@@ -1,0 +1,43 @@
+server:
+  port: 1111
+spring:
+  mvc:
+    static-path-pattern: /**
+    resources:
+      static-locations: classpath:/resources/,classpath:/static/,file:${web.upload-path}
+    servlet:
+      multipart:
+        #单个文件的最大值
+        max-file-size: 10MB
+        # 上传文件总的最大值
+        max-request-size: 10MB
+web:
+  upload-path: D:/MP3/
+baidu:
+  vop:
+    tokenUrl: https://openapi.baidu.com/oauth/2.0/token
+    serverURL: http://vop.baidu.com/server_api
+    #有效期为30天
+    token: 24.df99a5b2e1906654b386a9f0d5577a03.2592000.1607757069.282335-208522
+    apiKey: sYi4GIqdPrzC4K80IFvA29pD
+    secretKey: rhF5SHsEuUAz3cs3TgTpj4jllTn11gFG
+    cuid: 208522
+ffmpeg:
+  path: D:\\360download\\ffmpeg\\ffmpeg-4.3.1-win64-static\\bin\\ffmpeg.exe
+  execPre:
+    - -f
+    - s16le
+    - -ar
+    - 8000
+    - -ac
+    - 2
+  execVioce: wav
+xunfei:
+  vop:
+    appid: 5fab8c9f
+    voice_name: xiaoyan
+    speed: 50
+    volume: 80
+    pitch: 50
+    savePath: ./
+
