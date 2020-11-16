@@ -7,9 +7,7 @@ spring:
       static-locations: classpath:/resources/,classpath:/static/,file:${web.upload-path}
     servlet:
       multipart:
-        #单个文件的最大值
         max-file-size: 10MB
-        # 上传文件总的最大值
         max-request-size: 10MB
 web:
   upload-path: D:/MP3/
@@ -17,7 +15,6 @@ baidu:
   vop:
     tokenUrl: https://openapi.baidu.com/oauth/2.0/token
     serverURL: http://vop.baidu.com/server_api
-    #有效期为30天
     token: 24.df99a5b2e1906654b386a9f0d5577a03.2592000.1607757069.282335-208522
     apiKey: sYi4GIqdPrzC4K80IFvA29pD
     secretKey: rhF5SHsEuUAz3cs3TgTpj4jllTn11gFG

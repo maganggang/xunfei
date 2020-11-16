@@ -36,7 +36,7 @@ public class BaiduController {
     @RequestMapping(value = "getMessage",method = RequestMethod.POST)
     public String voiceChangeToMessage(@RequestParam("file") MultipartFile file){
         String fieldName = file.getOriginalFilename();
-        if(fieldName!=null&& StringUtils.endsWith(fieldName, ".pcm")) {
+        if(fieldName!=null) {
             File fileTemp=FileUtils.transferToFile(file);
             if(fileTemp.exists()){
                 try {

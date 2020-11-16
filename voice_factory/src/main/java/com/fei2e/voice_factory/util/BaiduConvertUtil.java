@@ -32,7 +32,17 @@ public class BaiduConvertUtil {
         HttpURLConnection conn = (HttpURLConnection) new URL(baiduConfig.getServerURL()).openConnection();
         // construct params
         JSONObject params = new JSONObject();
-        params.put("format", "pcm");
+        if(pcmFile.getName().toLowerCase().endsWith(".pcm")){
+            params.put("format", "pcm");
+        }else if(pcmFile.getName().toLowerCase().endsWith(".wav")){
+            params.put("format", "wav");
+        }else if(pcmFile.getName().toLowerCase().endsWith(".amr")){
+            params.put("format", "amr");
+        }else if(pcmFile.getName().toLowerCase().endsWith(".m4a")){
+            params.put("format", "m4a");
+        }else{
+            return null;
+        }
         params.put("rate", 8000);
         params.put("channel", "1");
         params.put("token", token);
